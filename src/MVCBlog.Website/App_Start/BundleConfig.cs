@@ -26,7 +26,8 @@ namespace MVCBlog.Website
                     "~/Content/custom.css",
                     "~/Content/lightbox.css",
                     "~/Content/jquery.autocomplete.css",
-                    "~/Content/shCoreDefault.css"));
+                    "~/Content/shCoreDefault.css",
+                    "~/Content/site.css"));
         }
     }
 }

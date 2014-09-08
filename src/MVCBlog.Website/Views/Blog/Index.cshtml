@@ -12,7 +12,7 @@
     @if (!this.Request.IsAuthenticated && !this.Model.Entries.Any())
     {
         <div class="jumbotron">
-            <h1>MVC Blog</h1>
+            <h1>Dotnetanalyst</h1>
             <p>@Common.HeroText</p>
             <p>@Html.ActionLink(@Common.Login, MVC.Administration.Index(), new { @class = "btn btn-primary btn-large" })</p>
         </div>
@@ -43,12 +43,25 @@ else
 {
     foreach (var entry in this.Model.Entries)
     {
-        <h2>@Html.ActionLink(entry.Header, entry.Url)</h2>
-         @:<article>
+
+        @:<article>
+       
+            <header>
+                <h2><strong>@Html.ActionLink(entry.Header, entry.Url)</strong>
+                   
+                    
+                </h2>
+            </header>
                 Html.RenderPartial(MVC.Blog.Views._BlogEntryHeaderControl, entry);
-                @Html.Raw(entry.ShortContent);
-                <p>@Html.ActionLink(Common.Continue, entry.Url)</p>
-         @:</article>
+            <section>
+                <p>@Html.Raw(entry.ShortContent)</p>
+            </section>
+    <footer>
+        <p>@Html.ActionLink(Common.Continue, entry.Url, null, new { @class = "btn btnblue btn-default" })</p>
+        <!-- Place this tag where you want the share button to render. -->
+        <div class="g-plus" data-action="share"></div>
+    </footer>
+            @:</article>
     }
 
     Html.RenderPartial(MVC.Blog.Views._PagingControl, this.Model);
