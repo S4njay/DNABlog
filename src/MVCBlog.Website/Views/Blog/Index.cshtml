@@ -59,7 +59,7 @@ else
     <footer>
         <p>@Html.ActionLink(Common.Continue, entry.Url, null, new { @class = "btn btnblue btn-default" })</p>
         <!-- Place this tag where you want the share button to render. -->
-        <div class="g-plus" data-action="share"></div>
+        <div class="g-plus" data-action="share" data-href="@entry.Url"></div>
     </footer>
             @:</article>
     }
