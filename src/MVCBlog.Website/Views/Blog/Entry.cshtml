@@ -6,6 +6,17 @@
 
 <article>
 @{Html.RenderPartial(MVC.Blog.Views._BlogEntryHeaderControl, this.Model.BlogEntry);}
+    <p>
+        <div class="fb-share-button pull-left"
+             style="padding-right:25px !important;"></div>
+        <div class="pull-left" style="padding-top: 5px !important;">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-via="sunnytrader"
+               >Tweet</a>
+        </div>
+        <div class="g-plus pull-left" style="margin-top: 10px !important;"
+             data-action="share" ></div>
+        <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
+    </p>
 @Html.Raw(this.Model.BlogEntry.ShortContent)
 @if (this.Model.BlogEntry.Content != null)
 {
@@ -27,6 +38,18 @@
         }
     </p>
 }
+<section>
+    <p>
+        <div class="fb-share-button pull-left"
+             style="padding-right:25px !important;"></div>
+        <div class="pull-left" style="padding-top: 5px !important;">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-via="sunnytrader">Tweet</a>
+        </div>
+        <div class="g-plus pull-left" style="margin-top: 10px !important;"
+             data-action="share"></div>
+        <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
+    </p>
+</section>
 </article>
 
 @{Html.RenderPartial(MVC.Blog.Views._MetaInformationControl, this.Model);}

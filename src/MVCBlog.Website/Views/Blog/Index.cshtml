@@ -59,7 +59,18 @@ else
     <footer>
         <p>@Html.ActionLink(Common.Continue, entry.Url, null, new { @class = "btn btnblue btn-default" })</p>
         <!-- Place this tag where you want the share button to render. -->
-        <div class="g-plus" data-action="share" data-href="@entry.Url"></div>
+        <p>
+            <div class="fb-share-button pull-left" data-href="@("/Blog/" + entry.Url)" 
+                 style="padding-right:25px !important;"></div>
+            <div class="pull-left" style="padding-top: 5px !important;">
+                <a href="https://twitter.com/share" class="twitter-share-button" data-via="sunnytrader"
+                   data-url="@("/Blog/" + entry.Url)">Tweet</a>
+            </div>
+            <div class="g-plus pull-left" style="margin-top: 10px !important;" 
+                 data-action="share" data-href="@("/Blog/" + entry.Url)"></div>
+            <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
+        </p>
+       
     </footer>
             @:</article>
     }
